@@ -117,9 +117,10 @@ extension ArticlesViewController: UITableViewDataSource, UITableViewDelegate {
         return UIView()
     }
     
-    // ##6
+    // ##Step 20:
     // MARK: UITableView Delegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        presenter.showDetails(forArticle: articles[indexPath.section])
     }
 }
 

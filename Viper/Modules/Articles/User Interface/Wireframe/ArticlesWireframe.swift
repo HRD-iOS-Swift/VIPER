@@ -11,7 +11,7 @@ import UIKit
 /*
  * The Router responsible for navigation between modules.
  */
-class ArticlesWireframe
+class ArticlesWireframe: ArticlesWireframeInput
 {
     
     // MARK: Constants
@@ -35,6 +35,7 @@ class ArticlesWireframe
     
     // Reference to the Router of the next VIPER module.
     var rootWireframe: RootWireframe!
+    var detailsWireframe: DetailsWireframe! // ##Step 20:
     
     // MARK: Public
     // ##Step 14:
@@ -79,8 +80,26 @@ class ArticlesWireframe
         articlesViewController.present(alert, animated: true, completion: nil)
     }
 
+    // ##Step 20:
+    // MARK: ArticlesWireframeInput
+    func presentDetailsInterfaceForArticle(article: Article) {
+        // Create the Router for the upcoming module.
+        self.detailsWireframe = DetailsWireframe()
+        
+        // Sends the article data to the next module's Presenter.
+        self.sendArticleToDetailsPresenter(detailsPresenter: self.detailsWireframe.detailsPresenter, article: article)
+        
+        // Presents the next View.
+        self.detailsWireframe.presentArticleDetailsInterfaceFromViewController(self.articlesViewController)
+    }
     
     // MARK: Private
+    
+    // ##Step 20:
+    private func sendArticleToDetailsPresenter(detailsPresenter: DetailsPresenter, article: Article) {
+        detailsPresenter.article = article
+    }
+    
     private func articlesViewControllerFromStoryboard() -> ArticlesViewController {
         let storyboard = UIStoryboard(name: storyboardName, bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: articlesViewControllerIdentifier) as! ArticlesViewController
