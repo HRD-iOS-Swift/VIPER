@@ -40,8 +40,9 @@ class ArticlesPresenter : ArticlesModuleInterface, ArticlesInteractorOutput
         self.interactor.fetchArticles()
     }
     
+    // ##Step 15: Sort
     func sortArticles() {
-        //wireframe.presentArticlesSortOptions()
+        wireframe.presentArticlesSortOptions()
     }
     
     func showDetails(forArticle article: Article) {

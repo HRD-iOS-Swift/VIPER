@@ -63,8 +63,9 @@ class ArticlesViewController: UIViewController, ArticlesViewInterface {
         navigationItem.title = navigationBarTitle.localized()
     }
     
-    // ##6
+    // ##Step 15: Sort
     @objc private func onSortButtonClicked(_ sender: Any?) {
+        presenter.sortArticles()
     }
     
     // Set up table view

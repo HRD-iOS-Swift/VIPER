@@ -15,7 +15,15 @@ class ArticlesWireframe
 {
     
     // MARK: Constants
+     // ##Step 15:
+    let alertSortByTitle = "ALERT_SORT_BY_TITLE"
+    let dateString = "ALERT_DATE_OPTION"
+    let titleString = "ALERT_TITLE_OPTION"
+    let authorString = "ALERT_AUTHOR_OPTION"
+    let webSiteString = "ALERT_WEBSITE_OPTION"
+    let cancelString = "ALERT_CANCEL_OPTION"
     
+    // ##Step 6:
     let storyboardName = "ArticlesStoryboard"
     let articlesViewControllerIdentifier = "ArticlesViewController"
     
@@ -49,6 +57,28 @@ class ArticlesWireframe
         
         rootWireframe.showRootViewController(articlesViewController, inWindow: window)
     }
+    
+    // ##Step 15: Sort
+    func presentArticlesSortOptions() {
+        let alert = UIAlertController(title: alertSortByTitle.localized(), message: nil, preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: self.dateString.localized(),
+                                      style: .default,
+                                      handler: { (alert: UIAlertAction!) in self.articlesPresenter.sortArticlesList(sortBy: .date) }))
+        alert.addAction(UIAlertAction(title: titleString.localized(),
+                                      style: .default,
+                                      handler: { (alert: UIAlertAction!) in self.articlesPresenter.sortArticlesList(sortBy: .title) }))
+        alert.addAction(UIAlertAction(title: authorString.localized(),
+                                      style: .default,
+                                      handler: { (alert: UIAlertAction!) in self.articlesPresenter.sortArticlesList(sortBy: .author) }))
+        alert.addAction(UIAlertAction(title: webSiteString.localized(),
+                                      style: .default,
+                                      handler: { (alert: UIAlertAction!) in self.articlesPresenter.sortArticlesList(sortBy: .website) }))
+        alert.addAction(UIAlertAction(title: cancelString.localized(),
+                                      style: .cancel,
+                                      handler: nil))
+        articlesViewController.present(alert, animated: true, completion: nil)
+    }
+
     
     // MARK: Private
     private func articlesViewControllerFromStoryboard() -> ArticlesViewController {
