@@ -25,6 +25,10 @@ class ArticlesViewController: UIViewController, ArticlesViewInterface {
     // MARK: Outlets
     @IBOutlet weak var articlesTableView: UITableView!
     
+    // ##Step 14:
+    // Reference to the Presenter's interface.
+    var presenter: ArticlesModuleInterface!
+    
     // ##Step 7:
     // MARK: Instance Variables
     var articles: [Article]!
@@ -38,7 +42,7 @@ class ArticlesViewController: UIViewController, ArticlesViewInterface {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-        
+        presenter.updateView()  // ##Step 14:
         HUD.show(.progress)
     }
     
