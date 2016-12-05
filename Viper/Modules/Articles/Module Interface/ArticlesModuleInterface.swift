@@ -2,7 +2,7 @@
 //  ArticlesModuleInterface.swift
 //  Viper
 //
-//  Created by Kokpheng on 12/2/16.
+//  Created by Kokpheng on 12/5/16.
 //  Copyright © 2016 Kokpheng. All rights reserved.
 //
 
@@ -17,3 +17,22 @@ protocol ArticlesModuleInterface: class {
     func sortArticles()
     func showDetails(forArticle article: Article)
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

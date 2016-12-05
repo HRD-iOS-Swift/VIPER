@@ -2,7 +2,7 @@
 //  ArticlesPresenter.swift
 //  Viper
 //
-//  Created by Kokpheng on 12/2/16.
+//  Created by Kokpheng on 12/5/16.
 //  Copyright © 2016 Kokpheng. All rights reserved.
 //
 
@@ -18,13 +18,15 @@ class ArticlesPresenter : ArticlesModuleInterface, ArticlesInteractorOutput
     // Reference to the View (weak to avoid retain cycle).
     weak var view: ArticlesViewInterface!
     
+    
     // Reference to the Interactor's interface.
     var interactor: ArticlesInteractorInput!
     
     // Reference to the Router
     var wireframe: ArticlesWireframe!
     
-    var articles: [Article]!
+      var articles: [Article]!
+    
     
     // MARK: Enums
     enum ArticlesSortBy {
@@ -34,7 +36,10 @@ class ArticlesPresenter : ArticlesModuleInterface, ArticlesInteractorOutput
         case website
     }
     
-    // ##Step 9:
+    
+    
+    
+    
     // MARK: ArticlesModuleInterface
     func updateView() {
         self.interactor.fetchArticles()
@@ -42,16 +47,13 @@ class ArticlesPresenter : ArticlesModuleInterface, ArticlesInteractorOutput
     
     // ##Step 15: Sort
     func sortArticles() {
-        wireframe.presentArticlesSortOptions()
+         wireframe.presentArticlesSortOptions()
     }
     
     // ##Step 20: Sort
     func showDetails(forArticle article: Article) {
-        self.wireframe.presentDetailsInterfaceForArticle(article: article)
     }
     
-    // ##Step 9: & // ##Step 12:
-    // MARK: ArticlesInteractorOutput
     func articlesFetched(articles: [Article]) {
         if articles.count > 0 {
             self.articles = articles
@@ -60,7 +62,6 @@ class ArticlesPresenter : ArticlesModuleInterface, ArticlesInteractorOutput
             self.view.showNoContentScreen()
         }
     }
-    
     
     // MARK: Public
     func sortArticlesList(sortBy: ArticlesSortBy) {
@@ -79,5 +80,14 @@ class ArticlesPresenter : ArticlesModuleInterface, ArticlesInteractorOutput
             view.showArticlesData(articles: items)
         }
     }
-    
+
 }
+
+
+
+
+
+
+
+
+

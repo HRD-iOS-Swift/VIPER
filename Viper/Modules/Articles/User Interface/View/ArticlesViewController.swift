@@ -24,10 +24,11 @@ class ArticlesViewController: UIViewController, ArticlesViewInterface {
     // ##Step 7:
     // MARK: Outlets
     @IBOutlet weak var articlesTableView: UITableView!
+ 
     
-    // ##Step 14:
     // Reference to the Presenter's interface.
     var presenter: ArticlesModuleInterface!
+    
     
     // ##Step 7:
     // MARK: Instance Variables
@@ -42,7 +43,7 @@ class ArticlesViewController: UIViewController, ArticlesViewInterface {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-        presenter.updateView()  // ##Step 14:
+        presenter.updateView()
         HUD.show(.progress)
     }
     
@@ -117,11 +118,7 @@ extension ArticlesViewController: UITableViewDataSource, UITableViewDelegate {
         return UIView()
     }
     
-    // ##Step 20:
-    // MARK: UITableView Delegate
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        presenter.showDetails(forArticle: articles[indexPath.section])
-    }
+
 }
 
 

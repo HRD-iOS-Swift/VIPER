@@ -2,11 +2,10 @@
 //  ArticlesInteractor.swift
 //  Viper
 //
-//  Created by Kokpheng on 12/2/16.
+//  Created by Kokpheng on 12/5/16.
 //  Copyright © 2016 Kokpheng. All rights reserved.
 //
 
-// ##Step 11:
 import Foundation
 import Alamofire
 import AlamofireObjectMapper
@@ -18,7 +17,7 @@ class ArticlesInteractor : ArticlesInteractorInput
 {
     // Url to the desired API.
     let url = "https://www.ckl.io/challenge"
-    
+ 
     // Reference to the Presenter's output interface.
     weak var output: ArticlesInteractorOutput!
     
@@ -34,3 +33,13 @@ class ArticlesInteractor : ArticlesInteractorInput
         }
     }
 }
+
+
+
+
+
+
+
+
+
+
