@@ -52,6 +52,9 @@ class ArticlesPresenter : ArticlesModuleInterface, ArticlesInteractorOutput
     
     // ##Step 20: Sort
     func showDetails(forArticle article: Article) {
+        
+        self.wireframe.presentDetailsInterfaceForArticle(article: article)
+        
     }
     
     func articlesFetched(articles: [Article]) {

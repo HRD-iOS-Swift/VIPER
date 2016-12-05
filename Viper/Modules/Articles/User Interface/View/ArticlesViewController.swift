@@ -117,7 +117,9 @@ extension ArticlesViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         return UIView()
     }
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+         presenter.showDetails(forArticle: articles[indexPath.section])
+    }
 
 }
 
