@@ -264,8 +264,8 @@
 		6F2F2D3A1DF0FAC400D2DAF3 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				6F2F4F921DF1386200C6AB23 /* DetailsViewInterface.swift */,
 				6F2F4F911DF1386200C6AB23 /* DetailsViewController.swift */,
+				6F2F4F921DF1386200C6AB23 /* DetailsViewInterface.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
