@@ -2,10 +2,9 @@
 //  ArticlesInteractorOutput.swift
 //  Viper
 //
-//  Created by Kokpheng on 12/5/16.
+//  Created by Kokpheng on 12/2/16.
 //  Copyright © 2016 Kokpheng. All rights reserved.
 //
-
 
 // ##Step 10:
 import Foundation
@@ -15,4 +14,3 @@ import Foundation
 protocol ArticlesInteractorOutput: class {
     func articlesFetched(articles: [Article])
 }
-

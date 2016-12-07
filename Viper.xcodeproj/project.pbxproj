@@ -31,6 +31,7 @@
 		6F32157B1DF55F4C00B2C595 /* ArticlesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F32157A1DF55F4C00B2C595 /* ArticlesInteractor.swift */; };
 		6F32157D1DF55F7300B2C595 /* ArticlesInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F32157C1DF55F7300B2C595 /* ArticlesInteractorInput.swift */; };
 		6F32157F1DF5603E00B2C595 /* ArticlesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F32157E1DF5603E00B2C595 /* ArticlesPresenter.swift */; };
+		6F56ABA21DF7AE0C00C8D12D /* ArticlesWireframeInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F56ABA11DF7AE0C00C8D12D /* ArticlesWireframeInput.swift */; };
 		7586E6A1ED4E237700BA2BD5 /* Pods_Viper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FF045B64512226599B32DFC /* Pods_Viper.framework */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +62,7 @@
 		6F32157A1DF55F4C00B2C595 /* ArticlesInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticlesInteractor.swift; sourceTree = "<group>"; };
 		6F32157C1DF55F7300B2C595 /* ArticlesInteractorInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticlesInteractorInput.swift; sourceTree = "<group>"; };
 		6F32157E1DF5603E00B2C595 /* ArticlesPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticlesPresenter.swift; sourceTree = "<group>"; };
+		6F56ABA11DF7AE0C00C8D12D /* ArticlesWireframeInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticlesWireframeInput.swift; sourceTree = "<group>"; };
 		8FF045B64512226599B32DFC /* Pods_Viper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Viper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A505BE898A81DA03E175A457 /* Pods-Viper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Viper.release.xcconfig"; path = "Pods/Target Support Files/Pods-Viper/Pods-Viper.release.xcconfig"; sourceTree = "<group>"; };
 		F418FAB703AB00BFC86C2D14 /* Pods-Viper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Viper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Viper/Pods-Viper.debug.xcconfig"; sourceTree = "<group>"; };
@@ -221,6 +223,7 @@
 		6F2F2D351DF0FAC400D2DAF3 /* Wireframe */ = {
 			isa = PBXGroup;
 			children = (
+				6F56ABA11DF7AE0C00C8D12D /* ArticlesWireframeInput.swift */,
 				6F2F4F831DF1310900C6AB23 /* ArticlesWireframe.swift */,
 			);
 			path = Wireframe;
@@ -446,6 +449,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F56ABA21DF7AE0C00C8D12D /* ArticlesWireframeInput.swift in Sources */,
 				6F2F4F761DF12D2900C6AB23 /* AppDependencies.swift in Sources */,
 				6F2F2D431DF0FAC400D2DAF3 /* AppDelegate.swift in Sources */,
 				6F2F2D491DF0FAC400D2DAF3 /* String+ Localized.swift in Sources */,

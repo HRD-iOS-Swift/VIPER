@@ -34,7 +34,6 @@ class DetailsViewController : UIViewController, DetailsViewInterface {
         super.viewDidLoad()
         presenter.updateView()
         navigationController!.title = kNavigationTitle.localized()
-        
     }
 
     // ##1

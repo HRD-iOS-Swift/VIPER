@@ -29,11 +29,7 @@ class DetailsWireframe {
         detailsViewController.presenter = detailsPresenter
         detailsPresenter.view = detailsViewController
         detailsPresenter.wireframe = self
-    
         controller.navigationController!.pushViewController(detailsViewController, animated: true)
-        
-        
-        
     }
 
     // MARK: Private
@@ -41,7 +37,6 @@ class DetailsWireframe {
     private func detailsViewControllerFromStoryboard() -> DetailsViewController {
         let storyboard = UIStoryboard(name: storyboardName, bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: detailsViewControllerIdentifier) as! DetailsViewController
-        
         return viewController
     }
 }

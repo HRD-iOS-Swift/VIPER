@@ -11,10 +11,11 @@ import UIKit
 /*
  * The Router responsible for navigation between modules.
  */
-class ArticlesWireframe
+class ArticlesWireframe: ArticlesWireframeInput
 {
     
     // MARK: Constants
+     // ##Step 15:
     let alertSortByTitle = "ALERT_SORT_BY_TITLE"
     let dateString = "ALERT_DATE_OPTION"
     let titleString = "ALERT_TITLE_OPTION"
@@ -30,14 +31,14 @@ class ArticlesWireframe
     
     // Reference to the ViewController (weak to avoid retain cycle).
     weak var articlesViewController: ArticlesViewController!
-    var articlesPresenter: ArticlesPresenter!
+    var articlesPresenter: ArticlesPresenter! // ##Step 14:
     
     // Reference to the Router of the next VIPER module.
     var rootWireframe: RootWireframe!
-    var detailsWireframe : DetailsWireframe!
+    var detailsWireframe: DetailsWireframe! // ##Step 20:
     
     // MARK: Public
-    
+    // ##Step 14:
     init() {
         let articlesInteractor = ArticlesInteractor()
         articlesPresenter = ArticlesPresenter()
@@ -46,20 +47,18 @@ class ArticlesWireframe
         articlesInteractor.output = articlesPresenter
     }
     
-    
     // MARK: Present View from Windows
     func presentArticlesInterfaceFromWindow(_ window: UIWindow) {
         // Load View Controller from storyboard
         articlesViewController = articlesViewControllerFromStoryboard()
         
+        // ##Step 14:
         articlesViewController.presenter = articlesPresenter
         articlesPresenter.view = articlesViewController
         
         rootWireframe.showRootViewController(articlesViewController, inWindow: window)
     }
     
-
-    // MARK: Private
     // ##Step 15: Sort
     func presentArticlesSortOptions() {
         let alert = UIAlertController(title: alertSortByTitle.localized(), message: nil, preferredStyle: .actionSheet)
@@ -81,9 +80,7 @@ class ArticlesWireframe
         articlesViewController.present(alert, animated: true, completion: nil)
     }
 
-    
-    
-    
+    // ##Step 20:
     // MARK: ArticlesWireframeInput
     func presentDetailsInterfaceForArticle(article: Article) {
         // Create the Router for the upcoming module.
@@ -96,15 +93,12 @@ class ArticlesWireframe
         self.detailsWireframe.presentArticleDetailsInterfaceFromViewController(self.articlesViewController)
     }
     
-    
     // MARK: Private
     
     // ##Step 20:
     private func sendArticleToDetailsPresenter(detailsPresenter: DetailsPresenter, article: Article) {
         detailsPresenter.article = article
     }
-    
-    
     
     private func articlesViewControllerFromStoryboard() -> ArticlesViewController {
         let storyboard = UIStoryboard(name: storyboardName, bundle: nil)

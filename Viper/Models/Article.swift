@@ -33,7 +33,3 @@ extension Article: Mappable {
         date        <- map["date"]
     }
 }
-
-
-
-
